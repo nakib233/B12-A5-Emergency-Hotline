@@ -1,0 +1,6 @@
+const heartNumber = parseInt(
+  document.getElementById("heart-increaseBtn").innerText
+);
+document.getElementById("heart-increaseBtn").innerText = heartNumber + 1;
+
+coin_num;
