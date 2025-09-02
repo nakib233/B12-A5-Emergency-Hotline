@@ -47,10 +47,6 @@ document.getElementById("heart-btn9").addEventListener("click", function () {
 
 // Calling Functionality
 
-// document.getElementById("call_button").addEventListener("click", function () {
-//   coin_decreasement("coin_num", "📞Calling National Emergency Number 999");
-// });
-
 const call_btns = document.getElementsByClassName("call_btn");
 
 call_btns[0].addEventListener("click", function () {
