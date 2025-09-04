@@ -4,3 +4,5 @@ const heartNumber = parseInt(
 document.getElementById("heart-increaseBtn").innerText = heartNumber + 1;
 
 coin_num;
+
+call_history_container;

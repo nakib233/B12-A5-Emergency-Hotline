@@ -1,3 +1,5 @@
+const callHistory = [];
+
 // Reusable Function
 function heartadd(id) {
   const heartNumber = parseInt(document.getElementById(id).innerText);
@@ -14,6 +16,39 @@ function coin_decreasement(id, message) {
     return;
   }
   document.getElementById(id).innerText = coin - 20;
+}
+
+// Reusable function for calling
+function callFunction(sector, hotLine) {
+  const data = {
+    service: sector,
+    number: hotLine,
+    date: new Date().toLocaleTimeString(),
+  };
+  callHistory.push(data);
+  console.log(callHistory);
+
+  // call history adding section
+  const historycontainer = document.getElementById("call_history_container");
+
+  for (const call of callHistory) {
+    const div = document.createElement("div");
+    div.innerHTML = `
+    
+     <div
+            class="flex justify-between p-[16px] mx-[24px] bg-[#fafafa] rounded-[12px]"
+          >
+            <div>
+              <h1 class="font-bold">${data.service}</h1>
+              <h4>${data.number}</h4>
+            </div>
+            <div>${data.date}</div>
+          </div>
+    `;
+    historycontainer.appendChild(div);
+  }
+
+  coin_decreasement("coin_num", `Calling ${sector} ${hotLine}`);
 }
 
 // heart1
@@ -49,39 +84,33 @@ document.getElementById("heart-btn9").addEventListener("click", function () {
 
 const call_btns = document.getElementsByClassName("call_btn");
 
+// Button 1
+
 call_btns[0].addEventListener("click", function () {
-  coin_decreasement("coin_num", "📞Calling National Emergency Number 999");
+  callFunction("National Emergency Number", 999);
 });
+
 call_btns[1].addEventListener("click", function () {
-  coin_decreasement("coin_num", "📞Calling Police Helpline Number 999");
+  callFunction(" Police Helpline Number", 999);
 });
 call_btns[2].addEventListener("click", function () {
-  coin_decreasement("coin_num", "📞Calling Fire Service Number 999");
+  callFunction("Fire Service Number", 999);
 });
 call_btns[3].addEventListener("click", function () {
-  coin_decreasement(
-    "coin_num",
-    "📞Calling Emergency Ambulance Service Number 1994-999999"
-  );
+  callFunction("Emergency Ambulance Service Number", 1994 - 999999);
 });
 call_btns[4].addEventListener("click", function () {
-  coin_decreasement("coin_num", "📞Calling Women & Child Helpline Number 109");
+  callFunction("Women & Child Helpline Number", 109);
 });
 call_btns[5].addEventListener("click", function () {
-  coin_decreasement(
-    "coin_num",
-    "📞Calling Anti-Corruption Helpline Number 106"
-  );
+  callFunction("Anti-Corruption Helpline Number", 106);
 });
 call_btns[6].addEventListener("click", function () {
-  coin_decreasement("coin_num", "📞Calling Electricity Helpline Number 16216");
+  callFunction("Electricity Helpline Number", 16216);
 });
 call_btns[7].addEventListener("click", function () {
-  coin_decreasement("coin_num", "📞Calling Brac Helpline Number 16445");
+  callFunction("Brac Helpline Number", 16445);
 });
 call_btns[8].addEventListener("click", function () {
-  coin_decreasement(
-    "coin_num",
-    "📞Calling Bangladesh Railway Helpline Number 163"
-  );
+  callFunction("Bangladesh Railway Helpline Number", 163);
 });
