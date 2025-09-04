@@ -36,7 +36,7 @@ function callFunction(sector, hotLine) {
     div.innerHTML = `
     
      <div
-            class="flex justify-between p-[16px] mx-[24px] bg-[#fafafa] rounded-[12px]"
+            class="flex justify-between p-[16px] mx-[24px] my-[20px] bg-[#fafafa] rounded-[12px]"
           >
             <div>
               <h1 class="font-bold">${data.service}</h1>
@@ -113,4 +113,13 @@ call_btns[7].addEventListener("click", function () {
 });
 call_btns[8].addEventListener("click", function () {
   callFunction("Bangladesh Railway Helpline Number", 163);
+});
+
+// Clearing the call history section
+
+document.getElementById("clear_button").addEventListener("click", function () {
+  callHistory.length = 0;
+
+  const historyContainer = document.getElementById("call_history_container");
+  historyContainer.innerHTML = "";
 });

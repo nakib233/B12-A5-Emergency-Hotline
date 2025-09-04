@@ -72,7 +72,9 @@
 
     <section class="m-[58px] md:flex justify-between gap-[30px] h-[100vh]">
       <!-- Buttons Section-->
-      <div class="h-[1100px] grid grid-cols-1 md:grid-cols-3 w-[75%]">
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full md:w-3/4"
+      >
         <!-- Buttons -->
         <!-- Button1 -->
 
@@ -385,16 +387,24 @@
 
       <!-- Call History Section -->
 
-      <div class="rounded-[12px] shadow-xl w-[28%] h-[1100px] bg-white">
+      <div
+        class="rounded-[12px] md:w-1/4 md:mt-0 shadow-xl w-[28%] h-[1100px] bg-white"
+      >
         <div class="flex justify-between items-center p-[24px]">
           <div><i class="fa-solid fa-clock"></i> Call History</div>
 
-          <button class="bg-[#00A63E] text-white rounded-xl px-[17px] py-[5px]">
+          <button
+            id="clear_button"
+            class="btn bg-[#00A63E] text-white btn-outline px-[30px] py-[10px] rounded-3xl"
+          >
             Clear
           </button>
         </div>
 
-        <div id="call_history_container" class="h-[500px]"></div>
+        <div
+          id="call_history_container"
+          class="h-[500px] w-[100vw] md:h-[600px] overflow-y-auto p-4"
+        ></div>
       </div>
     </section>
 
