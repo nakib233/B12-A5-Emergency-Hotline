@@ -5,6 +5,12 @@ function heartadd(id) {
   const heartNumber = parseInt(document.getElementById(id).innerText);
   document.getElementById(id).innerText = heartNumber + 1;
 }
+
+function copyAdd(id) {
+  const copyNum = parseInt(document.getElementById(id).innerText);
+  console.log(copyNum + 1);
+  document.getElementById(id).innerText = copyNum + 1;
+}
 // Reusable function for coin decreasement
 function coin_decreasement(id, message) {
   const coin = parseInt(document.getElementById(id).innerText);
@@ -26,7 +32,6 @@ function callFunction(sector, hotLine) {
     date: new Date().toLocaleTimeString(),
   };
   callHistory.push(data);
-  console.log(callHistory);
 
   // call history adding section
   const historycontainer = document.getElementById("call_history_container");
@@ -115,6 +120,54 @@ call_btns[8].addEventListener("click", function () {
   callFunction("Bangladesh Railway Helpline Number", 163);
 });
 
+// Copying functionality
+document.getElementById("button1").addEventListener("click", function () {
+  alert("Number Copied: 999");
+  navigator.clipboard.writeText("999");
+  copyAdd("increase_copy");
+});
+
+document.getElementById("button2").addEventListener("click", function () {
+  alert("Number Copied: 999");
+  navigator.clipboard.writeText("999");
+  copyAdd("increase_copy");
+});
+
+document.getElementById("button3").addEventListener("click", function () {
+  alert("Number Copied: 999");
+  navigator.clipboard.writeText("999");
+  copyAdd("increase_copy");
+});
+document.getElementById("button4").addEventListener("click", function () {
+  alert("Number Copied:1994-999999");
+  navigator.clipboard.writeText("1994-999999");
+  copyAdd("increase_copy");
+});
+document.getElementById("button5").addEventListener("click", function () {
+  alert("Number Copied: 109");
+  navigator.clipboard.writeText("109");
+  copyAdd("increase_copy");
+});
+document.getElementById("button1").addEventListener("click", function () {
+  alert("Number Copied: 106");
+  navigator.clipboard.writeText("106");
+  copyAdd("increase_copy");
+});
+document.getElementById("button1").addEventListener("click", function () {
+  alert("Number Copied: 16216");
+  navigator.clipboard.writeText("16216");
+  copyAdd("increase_copy");
+});
+document.getElementById("button1").addEventListener("click", function () {
+  alert("Number Copied: 16445");
+  navigator.clipboard.writeText("16445");
+  copyAdd("increase_copy");
+});
+document.getElementById("button1").addEventListener("click", function () {
+  alert("Number Copied: 163");
+  navigator.clipboard.writeText("163");
+  copyAdd("increase_copy");
+});
 // Clearing the call history section
 
 document.getElementById("clear_button").addEventListener("click", function () {
